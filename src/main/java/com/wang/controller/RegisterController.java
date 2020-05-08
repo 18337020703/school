@@ -81,6 +81,7 @@ public class RegisterController {
             ValueOperations<String, String> StringValueOperations = stringRedisTemplate.opsForValue();
            StringValueOperations.set(phone,Integer.toString(code),100, TimeUnit.SECONDS);
             //StringValueOperations.set(phone,Integer.toString(code),3000);
+            //验证码发送
             Code.code(phone,code);
             map.put("msg","发送成功");
             return map;
