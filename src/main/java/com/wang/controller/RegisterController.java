@@ -7,6 +7,7 @@ import com.wang.entity.UserRole;
 import com.wang.service.MerchantsService;
 import com.wang.service.RegisterService;
 import com.wang.service.StudentService;
+import com.wang.utils.Code;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -80,7 +81,7 @@ public class RegisterController {
             ValueOperations<String, String> StringValueOperations = stringRedisTemplate.opsForValue();
            StringValueOperations.set(phone,Integer.toString(code),100, TimeUnit.SECONDS);
             //StringValueOperations.set(phone,Integer.toString(code),3000);
-            //Code.code(phone,code);
+            Code.code(phone,code);
             map.put("msg","发送成功");
             return map;
         }
