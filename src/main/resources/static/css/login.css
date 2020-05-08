@@ -1,0 +1,148 @@
+body{
+background-image: url("../img/img10.png");
+}
+#right
+,#left,#left1{
+    border: 1px #e6e6e6 solid;
+     width: 315px;
+    margin: auto;
+     height: 350px;
+     margin-top: 100px;
+     background-color: #fff;
+    margin-right: 90px;
+    border-radius: 25px;
+    background-color: #E6E5E5;
+}
+#left button,#left1 button{
+    width: 182px;
+    height: 40px;
+    margin-left: 62px;
+    background-color: #1ECDB9;
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+#leftinput,#leftinput1{
+    margin-top: 20px;
+}
+#leftinput button{
+    position: relative;
+    left: 140px;
+    width: 80px;
+    height: 20px;
+    background-color: #fff;
+    border: none;
+    top: -31px;
+    color: #1ECDB9;
+}
+#leftinput input
+,#leftinput1 input{
+    width: 250px;
+    height: 38px;
+    margin-top: 20px;
+    margin-left: 35px;
+    border-radius: 25px;
+    border: 1px #cac8c8 solid;
+    text-align: center;
+}
+.gologin{
+    text-align: center;
+    margin-top: 20px;
+    color: #a6a3a3;
+}
+#right input{
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 260px;
+    border-radius: 25px;
+}
+#right button{
+    margin-left: 83px;
+    margin-top: 26px;
+    width: 135px;
+}
+.layui-tab-title{
+    left: 7px;
+    width: 290px;
+}
+.layui-tab-title li{
+    padding-left: 50px;
+    text-align: center;
+}
+.layui-tab-title .layui-this::after {
+    left: 16px;
+}
+.layui-tab-bar {
+    display: none;
+}
+form{
+    float: left;
+}
+a{
+    float: left;
+    margin-left: 50px;
+    margin-top: 28px;
+    color: #c4c4c4;
+}
+a span{
+    color: #04A695;
+}
+
+#logo{
+    font-size: 75px;
+    color: #fff;
+    width: 600px;
+    height: 50px;
+    text-align: center;
+  margin: auto;
+  padding-top: 50px;
+   
+}
+#imgCode span{
+    margin-left: 5px;
+    text-decoration-line: line-through;
+}
+#span1{
+    color: red;
+    font-size: 20px;
+}
+#span2{
+    color: green ;
+    font-size: 10px;
+}
+#span3{
+    color:pink ;
+    font-size: 20px;
+}
+#radio{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 161px;
+    margin-left: 80px;
+    color: #6f6f6f;
+}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+@font-face {
+    font-family: 'webfont';
+    font-display: swap;
+    src: url('//at.alicdn.com/t/webfont_bem9qubner6.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/webfont_bem9qubner6.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/webfont_bem9qubner6.woff2') format('woff2'),
+    url('//at.alicdn.com/t/webfont_bem9qubner6.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/webfont_bem9qubner6.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/webfont_bem9qubner6.svg#杨任东竹石体-Bold') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    color: #776d6d;
+    font-family:"webfont" !important;
+    font-size:60px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 0px;
+    margin-top: 77px}

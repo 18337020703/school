@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../res/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../res/layer-v3.1.1/layer/layer.js"></script>
+    <script src="//at.alicdn.com/t/font_1592584_spb7ixy0s0f.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+<div style="position: fixed;left: 100px;top: 100px">
+    <p class="iconfont">商丘师范学院兼职网，<br>&nbsp&nbsp&nbsp&nbsp我和同学们等待你的加入！</p>
+</div>
+<div id="left" style="display: none">
+    <div id="leftinput">
+        <input type="text" id="phoneNumber" placeholder="请输入手机号码">
+        <input type="text" id="codeValue" placeholder="请输入图片验证码">
+        <button id="imgCode"><span id="span1">9</span><span id="span2">5</span><span id="span3">2</span><span
+                id="span4">7</span></button>
+        <input type="text" id="MessageValue" placeholder="请输入手机验证码" style="margin-top: 0px">
+        <button type="button" id="messageCode">发送验证码</button>
+    </div>
+    <button type="button" id="sendMessageToSetPassword">下一步</button>
+</div>
+
+<div id="left1" style="display: none">
+
+    <div id="leftinput1">
+        <input type="text" id="password1" placeholder="请输入密码">
+        <input type="text" id="password2" placeholder="请再次输入密码">
+    </div>
+    <div class="layui-input-block" id="radio">
+        请选择：
+        <input type="radio" name="sex" value="0" title="学生" checked="">学生
+        <input type="radio" name="sex" value="1" title="商家">商家
+    </div>
+    <button type="button" id="sendMessageToController">立即注册</button>
+    <h5 class="gologin">——返回登录——</h5>
+</div>
+
+
+<div id="right">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">密码登录</li>
+            <li>手机验证</li>
+        </ul>
+        <div class="layui-tab-content" style="height: 100px;">
+            <div class="layui-tab-item layui-show">
+                <form id="loginform" action="../login" method="POST">
+                    <input type="text" name="username" required lay-verify="required" placeholder="账号"
+                           autocomplete="off"
+                           class="layui-input">
+                    <input type="password" name="password" required lay-verify="required" placeholder="密码"
+                           autocomplete="off" class="layui-input">
+                    <button type="submit" id="loginbutton" class="layui-btn">登录</button>
+                </form>
+                <a id="register">—————<span>注册账号</span>—————</a>
+            </div>
+            <div class="layui-tab-item">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入手机号码"
+                       autocomplete="off" class="layui-input">
+
+                <div><input type="text" style="width: 200px; display: block; float: left;" name="title" required
+                            lay-verify="required" placeholder="请输入验证码" autocomplete="off" class="layui-input">
+                    <button id="putcode" type="button" class="layui-btn" style="border-top-right-radius: 25px;
+                        border-bottom-right-radius: 25px;background-color:#fff;width:97px;height: 36px;margin-left: 184px;
+                        margin-top: -58px;color: #01AAED">获取验证码
+                    </button>
+                    <button
+                            type="button" class="layui-btn"
+                            style="float: left;margin-left: 80px;margin-top: 30px;">登录
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../res/layui/layui.js"></script>
+<script src="../js/login.js"></script>
+
+
+</body>
+
+</html>

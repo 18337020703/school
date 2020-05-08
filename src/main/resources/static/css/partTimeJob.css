@@ -1,0 +1,81 @@
+#search{
+    float: left;
+    width: 80%;
+    margin-left: 150px;
+    margin-top: 100px;
+  }
+  #search span{
+    font-size: 25px;
+    font-weight: 500;
+  }
+  #search a{
+    text-align: right;
+    margin-left: 866px;
+    font-size: 15px;
+    color: green;
+  }
+  #icon{
+    margin-top: 35px;
+  }
+  #icon button{
+    width: 100px;
+    height: 40px;
+    margin-left: 40px;
+  }
+  #view{
+    /* border: 1px red solid; */
+    float: left;
+    width: 100%;
+    /* margin-left: 150px; */
+    margin-top: 45px;
+  }
+  #view1{
+    /* border: 1px red solid; */
+    float: left;
+    width: 90%;
+    margin-left: 150px;
+    margin-top: 45px;
+  }
+  .layui-col-space15{
+    width: 90%;
+    /* float: left; */
+    border: 1px #d0d0d0 solid;
+    margin-left: 75px;
+    margin-top: 50px;
+  }
+  .layui-col-md12{
+    display: block;
+    width: 100%;
+    
+  }
+  #bottom{
+    float: left;
+    margin-top: 50px;
+  }
+  #bottom img{
+    width: 100%;
+  }
+  .layui-card{
+      float: left;
+    width: 555px;
+  }
+  #salary{
+    margin-left: 200px;
+    margin-top: 40px;
+    color:#ff8300;
+      float: left;
+  }
+  .layui-col-md12 button{
+      float: left;
+      margin-left: 125px;
+      margin-top: 29px;
+  }
+#i i{
+  display: block;
+  color: #575757;
+  font-size: 14px;
+}
+#demo2-1{
+  margin-left: 180px;
+  margin-bottom: 50px;
+}

@@ -1,0 +1,13 @@
+#pro,#city,#area{
+    border: 1px #d7d2d2 solid;
+    width: 150px;
+    height: 35px;
+    color: #6c6969;
+}
+#sex input{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+svg{
+    font-size: 30px;
+}

@@ -1,0 +1,103 @@
+.layui-header {
+    background-color: 
+    #fff !important;
+    border-bottom: #eee0e0 1px solid;
+}
+.layui-logo {
+    position: absolute;
+    color:  #5d5d5d !important;
+    font-size: 20px !important;
+    }
+    .layui-layout-admin .layui-logo {    
+        left: 15px;
+        text-align: left;  
+        width: 100px;
+    }
+    .layui-bg-black {
+            background-color: #FFFFFF !important;
+            border-right: #c1c1c1a3 1px solid;
+        }
+
+        .layui-nav {
+            background-color: #685A5805;
+            border:none;
+            height: 600px;
+        }
+        .layui-nav .layui-nav-item a{
+            color: #5d5d5d;
+        }
+        .layui-nav .layui-nav-item a:hover{
+            color: #5d5d5d;
+        }
+
+        .layui-nav-tree .layui-nav-item a {
+            color: #5d5d5d;
+            font-family: '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 15px;
+         
+        }
+
+    
+        .layui-nav-tree .layui-nav-item a:hover {
+            background-color: #b2f3ff;
+            opacity: 0.5;
+            color: rgba(23, 18, 41, 0.96);
+        }
+        .iframe{
+          border: none;
+        }
+        .layui-this > a:hover{
+            background-color: #dbdbdb;
+        }
+        .layui-nav-tree .layui-nav-item a:hover{
+            background-color: #dbdbdb;
+        }
+        .layui-nav-tree .layui-nav-bar{
+            width: 10px;
+            background-color: #b3b5b4;
+        }
+        .layui-nav-tree .layui-nav-child dd.layui-this,
+         .layui-nav-tree .layui-nav-child dd.layui-this a,
+          .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a,
+           .layui-nav-tree .layui-this > a:hover{
+            background-color:
+            #d0d2d2;
+            color:
+            #fff;
+        }
+         .layui-side-scroll .layui-nav-tree{
+            width: 150px ;
+        }
+        .layui-layout-admin .layui-side{
+            top: 60px;
+            width: 150px;
+            overflow-x: hidden;
+        }
+      .hide-icon{
+          position: absolute;
+          width: 18px;
+          height: 20px;
+            padding-left: 126px;
+            padding-top: 24px;
+      }
+      .layui-nav-itemed > a, .layui-nav-tree .layui-nav-title a, .layui-nav-tree .layui-nav-title a:hover{
+       color:  #9d5b5b !important;
+      }
+      .layui-nav-itemed > .layui-nav-child{
+          background-color: #717171 !important;
+      }
+      .child a{
+          color: #cbcbb6 !important;
+      }
+      .layui-body{
+          left: 0px;
+      }
+      .layui-layout-admin .layui-body{
+          top:45px;
+      }
+      .layui-nav{
+          height: 60px;
+      }
+    
+
+    

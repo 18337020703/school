@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.RegisterDao">
+    <insert id="save" parameterType="com.wang.entity.Student">
+         insert into student values (#{id},#{username},#{password},#{nickname},#{sex},#{phone},#{bir},#{university},#{department},#{profession},1,0,#{path})
+    </insert>
+    <insert id="saveMerchants" parameterType="com.wang.entity.Merchants">
+        insert into merchants values (#{id},#{username},#{password},#{nickname},#{phone},#{companyName},#{companyPhone},#{companyAddress},#{companyIntroduction},1,0);
+    </insert>
+    <insert id="setStudentRole" parameterType="com.wang.entity.UserRole">
+        insert into user_role value (#{id},#{uid},2)
+    </insert>
+    <insert id="setMerchantsRole" parameterType="com.wang.entity.UserRole">
+        insert into user_role value (#{id},#{uid},3)
+    </insert>
+</mapper>

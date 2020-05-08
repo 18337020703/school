@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../res/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/issue.css">
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../res/layer-v3.1.1/layer/layer.js"></script>
+    <script src="//at.alicdn.com/t/font_1592584_06cojlzgqv0m.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div id="left">
+    <div style="margin-top: 20px;">
+
+
+        <form class=" layui-form-pane" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-biaoti"></use>
+                    </svg>
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-riqi-1"></use>
+                            </svg>
+                        </label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="workDate" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="address">
+            <span>
+                <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-chengshi"></use>
+</svg>
+                城市</span>
+                <select id="pro" onchange="getcity()" name="workAddress">  <!--创造三个下拉选项栏-->
+                    <option>选择城市</option>
+                </select>
+                <span>
+                <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-diqu"></use>
+</svg>
+                地区</span>
+                <select id="city" onchange="getarea()" name="workAddress">
+                    <option>选择地区</option>
+                </select>
+                <span>
+                <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-shequ"></use>
+</svg>
+                街道</span>
+                <select id="area" name="workAddress">
+                    <option>选择街道</option>
+                </select>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-dizhi"></use>
+                    </svg>
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" name="workAddress" lay-verify="required" placeholder="请输入详细地址" autocomplete="off"
+                           class="layui-input" style="width: 250px">
+                </div>
+            </div>
+
+            <div id="typeofwork" style="width: 230px">
+            <span>
+                <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-xiangqing"></use>
+</svg>
+                </span>
+                <select id="type" style="width: 173px" name="typeOfWork">  <!--创造三个下拉选项栏-->
+                    <option>选择工作类型</option>
+                </select>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-qiandai"></use>
+                    </svg>
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" name="salary" lay-verify="required" placeholder="请输入工资/天" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-xiugai"></use>
+                    </svg>
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入详细内容" class="layui-textarea" name="content"></textarea>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <button class="layui-btn" id="tijiao" lay-submit="" lay-filter="demo2"><i
+                        class="layui-icon layui-icon-release"></i>发布信息
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="right">
+    <div style="padding: 20px; background-color: #ffffff;">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md6">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhuyishixiang2"></use>
+                        </svg>
+                        &nbsp&nbsp&nbsp&nbsp信息发布规章
+                    </div>
+                    <div class="layui-card-body">
+                        <ul>
+                            <li><i class="layui-icon layui-icon-circle-dot"></i>&nbsp&nbsp&nbsp禁止发布虚假信息，一经发现后果自负</li>
+                            <li><i class="layui-icon layui-icon-circle-dot"></i>&nbsp&nbsp&nbsp禁止散播色情信息，违反者强制注销账号</li>
+                            <li><i class="layui-icon layui-icon-circle-dot"></i>&nbsp&nbsp&nbsp禁止以金钱诱惑学生去违法或者法律边缘的行为
+                            </li>
+                            <li><i class="layui-icon layui-icon-circle-dot"></i>&nbsp&nbsp&nbsp时薪工资不得低于10元或者10元以下</li>
+                            <li><i class="layui-icon layui-icon-circle-dot"></i>&nbsp&nbsp&nbsp不得拖欠学生工资，否则取消商家发布信息资格
+                            </li>
+                            <li><i class="layui-icon layui-icon-circle-dot"></i>&nbsp&nbsp&nbsp不得在兼职广场出售任何物品</li>
+                            <li><i class="layui-icon layui-icon-circle-dot"></i>&nbsp&nbsp&nbsp相同信息不允许重复发送，占用公共资源</li>
+                            <li><i class="layui-icon layui-icon-circle-dot"></i>&nbsp&nbsp&nbsp本网站不会主动收取任何费用，谨防受骗</li>
+                            <li><i class="layui-icon layui-icon-circle-dot"></i>&nbsp&nbsp&nbsp本网站保证不泄露用户信息，请放心使用</li>
+                        </ul>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../res/layui/layui.js"></script>
+<script src="../js/issue.js"></script>
+</body>
+
+</html>

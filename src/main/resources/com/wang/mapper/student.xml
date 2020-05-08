@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.StudentDao">
+    <select id="findAll" resultType="com.wang.entity.Student">
+        select * from student
+    </select>
+    <select id="findById" resultType="com.wang.entity.Student">
+        select * from student where id = #{id}
+    </select>
+    <select id="findAllByName" resultType="com.wang.entity.Student">
+        select * from student where username = #{username}
+    </select>
+    <update id="update" parameterType="com.wang.entity.Student">
+        update student set nickname=#{nickname},phone=#{phone},sex=#{sex},bir=#{bir},
+        university=#{university},department=#{department},profession=#{profession} where id=#{id}
+    </update>
+    <update id="save">
+       UPDATE student
+       <set>
+           <if test="path!=null">
+               path = #{path},
+           </if>
+           <if test="enabled!=null">
+               enabled = #{enabled},
+           </if>
+           <if test="locked!=null">
+               locked = #{locked},
+           </if>
+       </set>
+       where id = #{id}
+    </update>
+</mapper>

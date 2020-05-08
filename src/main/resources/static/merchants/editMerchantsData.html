@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改个人资料</title>
+    <link rel="stylesheet" href="../res/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/editMerchantsData.css">
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../res/layui/layui.js"></script>
+    <script src="../js/editMerchantsData.js"></script>
+    <script src="//at.alicdn.com/t/font_1592584_i9sbj197rpl.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body style="margin-top: 50px">
+<div id="loading" style="margin-top: 150px;margin-left: 650px;position: fixed;display: none"><i style="font-size: 50px"
+                                                                                                class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i>
+</div>
+<div style="position: fixed;left: 800px;top: 100px">
+    <svg class="icon" aria-hidden="true" style="font-size: 200px">
+        <use xlink:href="#icon-maozi"></use>
+    </svg>
+</div>
+<form action="" id="editData" class="layui-form">
+    <div class="layui-form-item" style="width: 350px">
+        <label class="layui-form-label">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-gerenziliao1"></use>
+            </svg>
+        </label>
+        <div class="layui-input-block">
+            <input type="text" id="nickname" name="nickname" lay-verify="title" autocomplete="off" placeholder="请输入昵称"
+                   class="layui-input">
+        </div>
+    </div>
+    <input type="hidden" value="" id="hidden" name="id">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-shouji"></use>
+                </svg>
+            </label>
+            <div class="layui-input-inline">
+                <input type="tel" id="phone" name="phone" lay-verify="required|phone" autocomplete="off"
+                       placeholder="请输入个人手机号码" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-waiqinchucha"></use>
+                </svg>
+            </label>
+            <div class="layui-input-inline">
+                <input type="tel" id="companyName" name="companyName" autocomplete="off" placeholder="请输入公司名称"
+                       class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-dizhi"></use>
+                </svg>
+            </label>
+            <div class="layui-input-inline">
+                <input type="tel" id="companyAddress" name="companyAddress" autocomplete="off" placeholder="请输入公司地址"
+                       class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-dianhua"></use>
+                </svg>
+            </label>
+            <div class="layui-input-inline">
+                <input type="tel" id="companyPhone" name="companyPhone" lay-verify="required|phone" autocomplete="off"
+                       placeholder="请输入公司电话号码" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-xiugai"></use>
+            </svg>
+        </label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" name="companyIntroduction" class="layui-textarea"
+                      id="companyIntroduction"></textarea>
+        </div>
+    </div>
+
+
+    <!--    <div class="layui-form-item layui-form-text">-->
+    <!--      <label class="layui-form-label">编辑器</label>-->
+    <!--      <div class="layui-input-block">-->
+    <!--        <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

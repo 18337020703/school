@@ -1,0 +1,64 @@
+#left{
+    float: left;
+    width: 500px;
+    margin-left: 140px;
+    margin-top: 15px;
+}
+#right{
+float: left;
+width: 550px;
+margin-left: 50px;
+height: 380px;
+
+}
+#right .layui-card{
+    width: 500px;
+    height: 467px;
+    border: 1px #e6e6e6 solid;
+    margin-top: 0px;
+}
+.layui-form-pane .layui-form-label{
+    background-color: #fff;
+}
+#right ul{
+    width: 410px;
+    margin: auto;
+}
+#right ul li{
+    padding-top: 15px;
+    padding-left: 50px;
+    color: #767676;
+}
+#address,
+#typeofwork{
+    border: 1px #d9d9d9 solid;
+    width: 539px;
+    height: 38px;
+    margin-bottom: 18px;
+}
+#address select,
+#typeofwork select{
+    width: 88px;
+    height: 35px;
+    margin-left: 10px;
+    border: 0px;
+    border-left: 1px #d9d9d9 solid;
+    border-right: 1px #d9d9d9 solid;
+    color: #919191;
+    text-align: center;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+#address span
+,#typeofwork span{
+    margin-left: 13px;
+}
+#address option
+#typeofwork option{
+    color: #514d4d;
+}
+svg{
+    font-size: 30px;
+}
+select::-ms-expand{display:none;}

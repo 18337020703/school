@@ -1,0 +1,33 @@
+server:
+  port: 8080
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+    hiddenmethod:
+      filter:
+        enabled: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://49.234.18.34:3306/school?characterEncoding=UTF-8
+    username: root
+    password: root
+  security:
+    user:
+      name: wang
+      password: 123
+      roles: admin
+  redis:
+    database: 1
+    password: root
+    host: 49.234.18.34
+    port: 1996
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+mybatis:
+  mapper-locations: classpath:com/wang/mapper/*.xml
+  type-aliases-package: com.wang.entiy

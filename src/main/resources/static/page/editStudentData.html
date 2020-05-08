@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改个人资料</title>
+    <link rel="stylesheet" href="../res/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/editStudentData.css">
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../res/layui/layui.js"></script>
+    <script src="//at.alicdn.com/t/font_1592584_xx0ubnblw0s.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body style="margin-top: 50px">
+<form action="" id="editData">
+    <div class="layui-form-item" style="width: 350px">
+        <label class="layui-form-label">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-gerenziliao-copy"></use>
+            </svg>
+        </label>
+        <div class="layui-input-block">
+            <input type="text" id="nickName" name="nickname" lay-verify="title" autocomplete="off" placeholder="请输入标题"
+                   class="layui-input">
+        </div>
+    </div>
+    <input type="hidden" value="" id="hidden" name="id">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-dianhua"></use>
+                </svg>
+            </label>
+            <div class="layui-input-inline">
+                <input type="tel" id="phone" name="phone" lay-verify="required|phone" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-inline">
+        <label class="layui-form-label">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-shengri"></use>
+            </svg>
+        </label>
+        <div class="layui-input-inline">
+            <input type="text" data-id="bir" name="bir" id="date" lay-verify="date" placeholder="yyyy-MM-dd"
+                   autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item" style="margin-top: 20px">
+        <label class="layui-form-label">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-daxue"></use>
+            </svg>
+        </label>
+        <div class="layui-input-inline">
+            <select name="university" id="pro" onchange="getcity()">
+                <option value="">选择院校</option>
+            </select>
+        </div>
+        <div class="layui-input-inline" style="margin-left: -20px">
+            <select name="department" id="city" onchange="getarea()">
+                <option value="">选择院系</option>
+            </select>
+        </div>
+        <div class="layui-input-inline" style="margin-left: -20px">
+            <select name="profession" id="area">
+                <option value="">选择专业</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">
+            <svg class="icon" aria-hidden="true" style="font-size: 50px;margin-top: -10px">
+                <use xlink:href="#icon-xingbie"></use>
+            </svg>
+        </label>
+        <div class="layui-input-block" id="sex" style="color: #645a5a;font-size: 15px;">
+            <input type="radio" name="sex" value="男" title="男" checked="">男
+            <input type="radio" name="sex" value="女" title="女">女
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button id="editButton" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script src="../js/editStudentData.js"></script>
+</body>
+</html>

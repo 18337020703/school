@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>兼职广场</title>
+
+    <link rel="stylesheet" href="../res/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/partTimeJob.css" media="all">
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../res/layer-v3.1.1/layer/layer.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//at.alicdn.com/t/font_1592584_yf33erzihp.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="loading" style="margin-top: 350px;margin-left: 650px;position: fixed;color: orange">
+    <i style="font-size: 66px" class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i>
+</div>
+<div id="head">
+    <img src="../img/img11.png" alt="">
+</div>
+<div id="search">
+    <!--        <div><span>本地兼职</span><a href="">查看全部兼职</a></div>-->
+    <div id="icon">
+        <button class="layui-btn layui-btn-primary choice-type" style="background-color: #009688;color: white">全部兼职
+        </button>
+        <button class="layui-btn layui-btn-primary choice-type" id="type1" value="市场推广">市场推广</button>
+        <button class="layui-btn layui-btn-primary choice-type" id="type2" value="餐饮服务">餐饮服务</button>
+        <button class="layui-btn layui-btn-primary choice-type" id="type3" value="线上兼职">线上兼职</button>
+        <button class="layui-btn layui-btn-primary choice-type" id="type4" value="线下兼职">线下兼职</button>
+        <button class="layui-btn layui-btn-primary choice-type" id="type5" value="家教培训">家教培训</button>
+        <button class="layui-btn layui-btn-primary choice-type" id="type6" value="趣兼职">趣味兼职</button>
+    </div>
+</div>
+
+<div id="view"></div>
+<div id="demo2-1"></div>
+
+<script id="demo" type="text/html">
+    <div style="background-color: #FFFFFF;">
+        {{# layui.each(d, function(index, item){ }}
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body" style="color:#5d5d5d;font-size:20px"> {{ item.title || '' }}</div>
+                    <div class="layui-card-body" id="i">
+                        <i class="layui-icon layui-icon-tips" id="star1">&nbsp&nbsp{{item.content}}</i>
+                        <i class="layui-icon layui-icon-location">&nbsp&nbsp{{item.workAddress}}</i>
+                    </div>
+                </div>
+                <div id="salary"><i class="layui-icon layui-icon-rmb" id="star"></i>{{item.salary}}/天</div>
+                {{# if(!item.thisStatus){ }}
+                <button class="layui-btn" id="apply" value="{{item.id}} " onclick="abc($(this))">立即报名</button>
+                {{# }else if(item.thisStatus==true) { }}
+                <button class="layui-btn" style="background-color: #fff;border:1px #5b5b5b solid;color: #5c5c5c">已经报名
+                </button>
+                {{#} }}
+            </div>
+        </div>
+        {{# }); }}
+        {{# if(d.length === 0){ }}
+        <svg class="icon" aria-hidden="true" style="font-size: 150px;margin-left: 600px">
+            <use xlink:href="#icon-icon-test2"></use>
+        </svg>
+        {{# } }}
+    </div>
+</script>
+
+<script src="../res/layui/layui.js"></script>
+<script src="../js/partTimeJob.js"></script>
+</body>
+
+</html>

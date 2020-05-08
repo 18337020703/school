@@ -1,0 +1,33 @@
+form{
+    width: 520px;
+    border: 2px solid aqua;
+    border-radius: 3%;
+    margin: auto;
+    margin-top: -573px;
+    background-color: #fff;
+}
+.layui-form-label{
+    width: 99px;
+}
+.select{
+    width: 191px;
+}
+.layui-input-block {
+    margin-left: 129px;
+    min-height: 36px;
+}
+#bgcolor{
+    width: 670px;
+    height: 632px;
+    background-color: aqua;
+    }
+    #logo{
+        font-size: 75px;
+        color: #fff;
+        width: 600px;
+        height: 50px;
+        text-align: center;
+      margin: auto;
+      padding-top: 173px;
+       
+    }

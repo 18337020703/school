@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.MerchantsDao">
+    <resultMap id="merchants" type="com.wang.entity.Merchants">
+        <id column="id" property="id"/>
+        <result column="company_name" property="companyName"/>
+        <result column="company_phone" property="companyPhone"/>
+        <result column="company_address" property="companyAddress"/>
+        <result column="company_introduction" property="companyIntroduction"/>
+    </resultMap>
+    <select id="findAll" resultMap="merchants">
+        select * from merchants
+    </select>
+    <select id="findById" resultMap="merchants" parameterType="String">
+        select * from merchants where id = #{id}
+    </select>
+    <select id="findAllByUsername" parameterType="String" resultMap="merchants">
+        select * from merchants where username = #{username}
+    </select>
+    <insert id="saveMerchants" parameterType="com.wang.entity.Merchants">
+        insert into merchants values (#{id},#{username},#{password},#{nickname},#{phone},#{companyName},#{companyPhone},#{companyAddress},#{companyIntroduction},0,0);
+    </insert>
+    <update id="update" parameterType="com.wang.entity.Merchants">
+   update merchants
+   <set>
+       <if test="nickname!=null">
+           nickname = #{nickname},
+       </if>
+       <if test="phone!=null">
+           phone = #{phone},
+       </if>
+       <if test="companyName!=null">
+           company_name = #{companyName},
+       </if>
+       <if test="companyPhone!=null">
+           company_phone = #{companyPhone},
+       </if>
+       <if test="companyAddress!=null">
+           company_address = #{companyAddress},
+       </if>
+       <if test="companyIntroduction!=null">
+           company_introduction = #{companyIntroduction},
+       </if>
+       <if test="locked!=null">
+           locked = #{locked}
+       </if>
+   </set>
+   where id = #{id}
+    </update>
+</mapper>

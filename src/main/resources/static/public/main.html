@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Layui</title>
+
+    <link rel="stylesheet" href="../res/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/main.css" media="all">
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../res/layer-v3.1.1/layer/layer.js"></script>
+    <script src="//at.alicdn.com/t/font_1592584_spb7ixy0s0f.js"></script>
+</head>
+
+<body>
+<div class="layui-carousel" id="test2" style="margin-top: 15px;width: 100%;">
+    <div carousel-item="">
+        <div style="position: relative">
+            <div style="position: absolute;left: -350px">
+                <p class="iconfont" style="font-size: 50px;color: #e6e6e6">让我们在这里<br>&nbsp&nbsp展开自己的翅膀</p>
+            </div>
+            <img src="../img/img9.png" alt="" style="width: 100%;">
+        </div>
+        <div style="position: relative">
+            <div style="position: absolute;top: 115px;left: -137px">
+                <p class="iconfont" style="font-size: 30px;transform:rotate(7deg);">商师兼职网</p>
+                <p class="iconfont" style="font-size: 50px;margin-left: 1000px;margin-top: -150px;color: #e6e6e6">商丘师范学院<br>&nbsp&nbsp自己的兼职平台
+                </p>
+            </div>
+            <img src="../img/img8.png" alt="" style="width: 100%;"></div>
+    </div>
+</div>
+<div id="text">每天,&nbsp<span>1314</span>&nbsp人在校园兼职网报名兼职</div>
+<div id="mid">
+    <div class="left">
+        <div class="layui-carousel" id="test3" style="margin-top: 15px;width: 100%;">
+            <div carousel-item="">
+                <div>
+                    名企专区<br/>
+                    <span>让兼职成为一种提升</span>
+                </div>
+                <div>
+                    义工志愿者<br/>
+                    <span>让兼职成为一种公益</span>
+                </div>
+                <div>
+                    体验测评员<br/>
+                    <span>让兼职成为一种分享</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="layui-carousel" id="test4" style="margin-top: 15px;width: 100%;">
+            <div carousel-item="">
+                <div><img src="../img/phone1.png" alt=""></div>
+                <div><img src="../img/phone2.png" alt=""></div>
+                <div><img src="../img/phone3.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="search">
+    <div><span>本地兼职</span><a href="../public/partTimeJob.html">查看全部兼职</a></div>
+    <div id="icon">
+        <button class="layui-btn">全部兼职</button>
+        <button class="layui-btn layui-btn-primary" id="type2">校园服务</button>
+        <button class="layui-btn layui-btn-primary">服务行业</button>
+        <button class="layui-btn layui-btn-primary">客服兼职</button>
+        <button class="layui-btn layui-btn-primary">公益兼职</button>
+        <button class="layui-btn layui-btn-primary">推广兼职</button>
+    </div>
+</div>
+<!-- <div id="container" style="width:300px; height: 180px;"></div> -->
+<div id="view"></div>
+<div id="search2">
+    <div><span>本地兼职</span><a href="../public/partTimeJob.html">查看全部兼职</a></div>
+    <div id="icon1">
+        <button class="layui-btn">全部兼职</button>
+        <button class="layui-btn layui-btn-primary">校园服务</button>
+        <button class="layui-btn layui-btn-primary">服务行业</button>
+        <button class="layui-btn layui-btn-primary">客服兼职</button>
+        <button class="layui-btn layui-btn-primary">公益兼职</button>
+        <button class="layui-btn layui-btn-primary">推广兼职</button>
+    </div>
+</div>
+<div id="view1"></div>
+<div id="bottom">
+    <img src="../img/img10.png" alt="">
+</div>
+<script id="demo" type="text/html">
+    <div style="background-color: #FFFFFF;">
+        {{# layui.each(d, function(index, item){ }}
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body" style="color:#5d5d5d;font-size:20px"> {{ item.title || '' }}</div>
+                    <div class="layui-card-body">
+                        <i class="layui-icon layui-icon-tips">{{item.content}}</i>
+                        <i class="layui-icon layui-icon-location" id="star">{{item.workAddress}}</i>
+                    </div>
+                    <div style="color: #ff8300"><i class="layui-icon layui-icon-rmb" id="star3"></i> {{item.salary}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{# }); }}
+        {{# if(d.length === 0){ }}
+        无数据
+        {{# } }}
+    </div>
+</script>
+
+
+<script id="demo1" type="text/html">
+    <!-- <h1>{{ d.title }}</h1> -->
+    <div style="background-color: #FFFFFF;">
+        {{# layui.each(d, function(index, item){ }}
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body" style="color:#5d5d5d;font-size:20px"> {{ item.title || '' }}</div>
+                    <div class="layui-card-body">
+                        <i class="layui-icon layui-icon-tips">{{item.content}}</i>
+                        <i class="layui-icon layui-icon-location" id="star1">{{item.workAddress}}</i>
+                    </div>
+                    <div style="color: #ff8300;margin-left: 20px"><i class="layui-icon layui-icon-rmb" id="star2"></i>
+                        {{item.salary}}/天
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{# }); }}
+        {{# if(d.length === 0){ }}
+        无数据
+        {{# } }}
+    </div>
+</script>
+
+<script src="../res/layui/layui.js"></script>
+<script src="../js/main.js"></script>
+</body>
+
+</html>

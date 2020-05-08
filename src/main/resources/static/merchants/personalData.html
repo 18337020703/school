@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../res/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/personalData.css">
+    <script src="//at.alicdn.com/t/font_1592584_yf33erzihp.js"></script>
+    <script src="../js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../res/layui/layui.js"></script>
+    <script src="../js/personalData.js"></script>
+    <title>Document</title>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="but" style="margin-left: 88px;margin-top: 43px">
+    <button class="choice-type">全部信息</button>
+    <button class="choice-type" value="1">招聘中</button>
+    <button class="choice-type" value="2">已过期</button>
+    <button class="choice-type" value="3">审核中</button>
+</div>
+<div id="view"></div>
+<div id="demo2-1"></div>
+<div style="padding: 20px; background-color: #FBF8F8;" id="right">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card" style="margin-top: 25px;border: 1px #ccc solid;border-radius: 5px ">
+                <div class="layui-card-header">
+                    <svg class="icon" aria-hidden="true" style="font-size: 30px">
+                        <use xlink:href="#icon-gerenziliao1"></use>
+                    </svg>
+                    个人资料
+                </div>
+                <div class="layui-card-body">
+
+                    <div id="personalDataMsg">
+                        <div>
+                            <svg class="icon" aria-hidden="true" style="font-size: 27px">
+                                <use xlink:href="#icon-waiqinchucha"></use>
+                            </svg>
+                            <span id="companyName"></span></div>
+                        <div>
+                            <svg class="icon" aria-hidden="true" style="font-size: 27px">
+                                <use xlink:href="#icon-shouji"></use>
+                            </svg>
+                            <span id="companyPhone"></span></div>
+                        <div>
+                            <svg class="icon" aria-hidden="true" style="font-size: 27px">
+                                <use xlink:href="#icon-dizhi"></use>
+                            </svg>
+                            <span id="companyAddress"></span></div>
+                    </div>
+                </div>
+                <hr>
+
+                <div id="personalDataMid">
+
+                    <div>
+                        <svg class="icon" aria-hidden="true" style="font-size: 25px;margin-left: 16px">
+                            <use xlink:href="#icon-biaoqian"></use>
+                        </svg>
+                        <span id="companyIntroduction"></span></div>
+                    <hr>
+                    <div><i class="layui-icon layui-icon-rate-half"></i><span class="iconfont icon-xueyuan"></span>我的口碑
+                    </div>
+                    <div id="test9"></div>
+                    <hr>
+                    <div><i class="layui-icon layui-icon-date"></i>：我来兼职网1天了</div>
+                    <div><i class="layui-icon layui-icon-release"></i>：我总共发布了10条兼职</div>
+                    <div><i class="layui-icon layui-icon-location"></i>：商丘市梁园区商丘师范学院</div>
+
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script id="demo" type="text/html">
+    <div style="padding: 20px; background-color: #FBF8F8; width:920px">
+        {{# layui.each(d, function(index, item){ }}
+        <div class="layui-row layui-col-space15" style="position: relative;margin-left: 78px">
+            <div id="status" style="position: absolute;left: 720px;top: 10px;z-index: 1">
+
+                {{# if(!item.workRequest){ }}
+                <svg class="icon" aria-hidden="true" style="font-size: 60px">
+                    <use xlink:href="#icon-shenhezhong"></use>
+                </svg>
+                {{# }else if(item.workStatus && item.workRequest){ }}
+                <svg class="icon" aria-hidden="true" style="font-size: 60px">
+                    <use xlink:href="#icon-shengxiaozhong"></use>
+                </svg>
+                {{# }else if(!item.workStatus){ }}
+                <svg class="icon" aria-hidden="true" style="font-size: 60px">
+                    <use xlink:href="#icon-yiguoqi"></use>
+                </svg>
+                {{# } }}
+            </div>
+            <div class="layui-col-md12">
+                <div class="layui-card" style="border: 1px #ccc solid;border-radius: 10px">
+                    <div class="layui-card-header">
+                        <i>
+                            <svg class="icon" aria-hidden="true" style="font-size: 30px">
+                                <use xlink:href="#icon-biaoti"></use>
+                            </svg>
+                        </i>{{item.title}}
+                    </div>
+
+                    <div class="layui-card-body" style="color:#5d5d5d">
+                        <i>
+                            <svg class="icon" aria-hidden="true" style="font-size: 40px">
+                                <use xlink:href="#icon-xiangqing"></use>
+                            </svg>
+                        </i>
+                        {{ item.content || '' }}
+                    </div>
+                    <div class="layui-card-body" style="color:#5d5d5d">
+                        <i>
+                            <svg class="icon" aria-hidden="true" style="font-size: 30px">
+                                <use xlink:href="#icon-dizhi"></use>
+                            </svg>
+                        </i>
+                        {{ item.workAddress }}
+                    </div>
+                    <div class="layui-card-body" style="color:#5d5d5d">
+                        <i>
+                            <svg class="icon" aria-hidden="true" style="font-size: 40px">
+                                <use xlink:href="#icon-riqi-"></use>
+                            </svg>
+                        </i>
+                        {{ item.releaseDate }}
+                    </div>
+                    <div class="layui-card-body icon-i">
+
+                        <button value="{{item.id}}" title="查看报名学生" onclick="f($(this).val())">
+                            <svg class="icon" aria-hidden="true" font-size="30px">
+                                <use xlink:href="#icon-wenjianliebiao"></use>
+                            </svg>
+                        </button>
+                        <button value="{{item.id}}" title="修改兼职信息" content="{{item.content}}" id="edit">
+                            <svg class="icon" aria-hidden="true" style="font-size: 30px">
+                                <use xlink:href="#icon-xiugai"></use>
+                            </svg>
+                        </button>
+                        <button value="{{item.id}}" title="删除兼职" onclick="f2($(this).val())">
+                            <svg class="icon" aria-hidden="true" style="font-size: 30px">
+                                <use xlink:href="#icon-shanchu"></use>
+                            </svg>
+                        </button>
+                        <button value="{{item.id}}" title="下架自己的兼职" onclick="f1($(this).val())">
+                            <svg class="icon" aria-hidden="true" style="font-size: 30px">
+                                <use xlink:href="#icon-xiajia"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{# }); }}
+        {{# if(d.length === 0){ }}
+        <svg class="icon" aria-hidden="true" style="font-size: 150px;margin-left: 350px">
+            <use xlink:href="#icon-icon-test2"></use>
+        </svg>
+        {{# } }}
+    </div>
+</script>
+</body>
+</html>

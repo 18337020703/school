@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wang.dao.MenuMapper">
+    <resultMap id="BaseResultMap" type="com.wang.entity.Menu">
+        <id property="id" column="id"/>
+        <result property="pattern" column="pattern"/>
+        <collection property="roles" ofType="com.wang.entity.Role">
+            <id property="id" column="rid"/>
+            <result property="name" column="rname"/>
+            <result property="nameZh" column="rnameZh"/>
+        </collection>
+    </resultMap>
+
+    <cache type="com.wang.cache.RedisCache"/>
+<!--    m是路径表  r表示权限表  mr是路径与权限的关系表-->
+    <select id="getAllMenus" resultMap="BaseResultMap">
+        SELECT m.* ,r.id AS rid ,r.name AS rname , r.nameZh AS rnameZh FROM t_menu m left join menu_role mr
+        ON m.id=mr.mid left join t_role r ON mr.rid = r.id
+    </select>
+</mapper>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.PartTimeWorkDao">
+    <resultMap id="result" type="com.wang.entity.PartTimeWork">
+        <id column="id" property="id"/>
+        <result column="work_address" property="workAddress"/>
+        <result column="work_status" property="workStatus"/>
+        <result column="work_date" property="workDate"/>
+        <result column="company_id" property="companyId"/>
+        <result column="type_of_work" property="typeOfWork"/>
+        <result column="work_request" property="workRequest"/>
+        <result column="release_date" property="releaseDate"/>
+    </resultMap>
+<!--    <parameterMap id="parameter" type="com.wang.entity.PartTimeWork">-->
+<!--        <parameter property="workAddress" resultMap="result"/>-->
+<!--        <parameter property="workStatus" resultMap="result"/>-->
+<!--        <parameter property="workDate" resultMap="result"/>-->
+<!--        <parameter property="companyId" resultMap="result"/>-->
+<!--        <parameter property="typeOfWork" resultMap="result"/>-->
+<!--        <parameter property="workRequest" resultMap="result"/>-->
+<!--        <parameter property="releaseDate" resultMap="result"/>-->
+<!--    </parameterMap>-->
+    <insert id="save" parameterType="com.wang.entity.PartTimeWork">
+        insert into parttime_work value (#{id},#{title},#{content},#{salary},#{workAddress},#{workStatus},#{workDate},#{companyId},#{typeOfWork},#{workRequest},#{releaseDate})
+    </insert>
+    <insert id="saveDeal" parameterType="com.wang.entity.Deal">
+        insert into t_deal value (#{id},#{sid},#{pid},#{day},#{date},0,0)
+    </insert>
+    <cache type="com.wang.cache.RedisCache"></cache>
+    <select id="findByPage" resultMap="result">
+        select * from parttime_work where work_status = true and work_request = true order by release_date desc limit #{start}, #{size}
+    </select>
+    <cache type="com.wang.cache.RedisCache"></cache>
+    <select id="findTotalUser" resultType="Integer">
+        select count(*) from parttime_work where company_id = #{companyId}
+    </select>
+    <cache type="com.wang.cache.RedisCache"></cache>
+    <select id="findTotalDeal" resultType="Integer">
+          select count(*) from t_deal
+          <where>
+              <if test="studentId!=null">
+                  sid = #{studentId}
+              </if>
+              <if test="workStatus!=null">
+                 AND status = #{workStatus}
+              </if>
+              <if test="finish!=null">
+                 AND finish = #{finish}
+              </if>
+          </where>
+
+    </select>
+    <select id="findByCondition" parameterType="com.wang.entity.VoEntity" resultMap="result">
+          select * from parttime_work
+          <where>
+              <if test="typeOfWork!=null">
+                  type_of_work = #{typeOfWork}
+              </if>
+              <if test="workStatus!=null">
+                 AND work_status = #{workStatus}
+              </if>
+              <if test="workRequest!=null">
+                 AND work_request = #{workRequest}
+              </if>
+          </where>
+            limit #{start}, #{size}
+    </select>
+    <select id="findTotalCountsByCondition" resultType="Integer">
+           select count(*) from parttime_work
+           <where>
+               <if test="typeOfWork!=null">
+               type_of_work = #{typeOfWork}
+               </if>
+               <if test="workStatus!=null">
+                 AND  work_status = #{workStatus}
+               </if>
+               <if test="workRequest!=null">
+                  AND work_request = #{workRequest}
+               </if>
+           </where>
+
+    </select>
+    <select id="findStudentWorkBySessionId" parameterType="com.wang.entity.Deal" resultType="com.wang.entity.Deal">
+        select * from t_deal
+        <where>
+            <if test="studentId!=null">
+             sid = #{studentId}
+            </if>
+            <if test="partTimeWorkId!=null">
+                AND pid = #{partTimeWorkId}
+            </if>
+            <if test="workStatus!=null">
+                AND  status = #{workStatus}
+            </if>
+            <if test="finish!=null">
+                AND finish = #{finish}
+            </if>
+        </where>
+        <if test="start!=null">
+            limit #{start}, #{size}
+        </if>
+
+    </select>
+    <select id="findOverWork" parameterType="com.wang.entity.Deal" resultType="com.wang.entity.Deal">
+        select * from t_deal where sid = #{sid} and pid = #{pid}
+    </select>
+    <select id="findWorkById" parameterType="Integer" resultMap="result">
+        select * from parttime_work where id = #{id}
+    </select>
+    <select id="findPartTimeWorkByCondition"  resultMap="result">
+        select * from parttime_work
+        <where>
+            <if test="companyId!=null">
+                company_id = #{companyId}
+            </if>
+            <if test="workStatus!=null">
+                AND  work_status = #{workStatus}
+            </if>
+            <if test="workRequest!=null">
+                AND work_request = #{workRequest}
+            </if>
+        </where>
+        limit #{start}, #{size}
+    </select>
+    <update id="editDeal" parameterType="com.wang.entity.Deal">
+         update t_deal set status = #{status} where sid = #{sid} and pid = #{pid}
+    </update>
+    <update id="editDealFinish" parameterType="com.wang.entity.Deal">
+         update t_deal set finish = #{finish} where sid = #{sid} and pid = #{pid}
+    </update>
+    <update id="update" parameterType="com.wang.entity.PartTimeWork">
+        update parttime_work
+        <set>
+            <if test="title!=null">
+                title = #{title},
+            </if>
+            <if test="content!=null">
+                content = #{content},
+            </if>
+            <if test="salary!=null">
+                salary = #{salary},
+            </if>
+            <if test="workAddress!=null">
+                work_address = #{workAddress},
+            </if>
+            <if test="typeOfWork!=null">
+                type_of_work = #{typeOfWork},
+            </if>
+            <if test="workStatus!=null">
+                work_status = #{workStatus} ,
+            </if>
+            <if test="workRequest!=null">
+                work_request = #{workRequest} ,
+            </if>
+        </set>
+        where id =#{id}
+    </update>
+    <delete id="deleteWork" parameterType="Integer">
+        DELETE FROM parttime_work where id =#{id}
+    </delete>
+</mapper>

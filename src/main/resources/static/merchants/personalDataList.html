@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../res/layui/css/layui.css">
+<link rel="stylesheet" href="../css/personalDataList.css">
+<link rel="stylesheet" href="../res/layer-v3.1.1/layer/layer.js">
+<link rel="stylesheet" href="../js/jquery/jquery-3.4.1.min.js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .layui-table-box {
+            width: 1210px;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<table class="layui-hide" id="LAY_table_user" lay-filter="demo"></table>
+<script src="../res/layui/layui.js"></script>
+<script src="../js/personalDataList.js"></script>
+<script type="text/html" id="barDemo">
+    {{# if(!d.status){ }}
+    <a class="layui-btn layui-btn-primary layui-btn-xs" id="hezuo" lay-event="detail">合作</a>
+    {{# }else if(d.status){ }}
+    <a class="layui-btn layui-btn-xs" lay-event="edit" id="quxiao">取消</a>
+    <a class="layui-btn layui-btn-xs" lay-event="over" id="over">交易成功</a>
+    {{# } }}
+</script>
+</body>
+</html>
